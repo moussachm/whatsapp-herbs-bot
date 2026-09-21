@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>وكيل خدمة العملاء الذكي | محل النسمة للأعشاب</title>
+  <meta name="description" content="نموذج تفاعلي لوكيل ذكاء اصطناعي يرد على استفسارات عملاء محل أعشاب وتوابل تلقائياً." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
+</head>
+<body>
+
+  <!-- ===== الهيدر / شرح المشروع ===== -->
+  <header class="page-header">
+    <div class="container">
+      <div class="brand">
+        <span class="brand-icon">🌿</span>
+        <div>
+          <h1>وكيل خدمة العملاء الذكي</h1>
+          <p class="brand-sub">نموذج تفاعلي — محل النسمة للأعشاب والتوابل</p>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="badge">HTML + CSS + JS</span>
+        <span class="badge">بدون سيرفر</span>
+        <span class="badge">يعمل بالكامل في المتصفح</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container layout">
+
+    <!-- ===== عمود المحادثة ===== -->
+    <section class="chat-panel">
+      <div class="chat-head">
+        <div class="avatar">🌿</div>
+        <div class="chat-head-info">
+          <strong>النسمة | خدمة العملاء</strong>
+          <span class="status"><i class="dot"></i> متصل الآن</span>
+        </div>
+        <button id="resetBtn" class="reset-btn" title="محادثة جديدة">↻</button>
+      </div>
+
+      <div id="chatBody" class="chat-body" aria-live="polite"></div>
+
+      <div class="typing" id="typing" hidden>
+        <span></span><span></span><span></span>
+      </div>
+
+      <form id="chatForm" class="chat-input" autocomplete="off">
+        <input
+          id="userInput"
+          type="text"
+          placeholder="اكتب رسالتك… مثال: عندكم زعفران؟"
+          aria-label="اكتب رسالتك"
+        />
+        <button type="submit" aria-label="إرسال">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </form>
+    </section>
+
+    <!-- ===== عمود التوضيح ===== -->
+    <aside class="side-panel">
+      <div class="card">
+        <h2>جرّب تسأل</h2>
+        <div class="suggestions" id="suggestions"></div>
+      </div>
+
+      <div class="card">
+        <h2>كيف يشتغل؟</h2>
+        <ol class="steps">
+          <li>يقرأ رسالة العميل ويطبّعها (تصحيح الهمزات والرموز)</li>
+          <li>يبحث في قاعدة المنتجات بالكلمات المفتاحية</li>
+          <li>يطابق النية (Intent) المناسبة من قائمة النوايا</li>
+          <li>يصيغ رداً طبيعياً بمعلومات السعر والفوائد والمخزون</li>
+          <li>لو ما فهم، يوجّه العميل للتواصل مع موظف بشري</li>
+        </ol>
+      </div>
+
+      <div class="card card-note">
+        <h2>ملاحظة تقنية</h2>
+        <p>
+          هذا <strong>نموذج عرض</strong> يشتغل بالكامل في المتصفح — مثالي للمعرض والتجربة.
+          النسخة الإنتاجية تربط نفس المحرك بـ <code>WhatsApp Business API</code> وخدمة LLM،
+          فتصير الردود أكثر ذكاءً وفهماً للسياق.
+        </p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="page-footer">
+    <div class="container">
+      <span>بُني بواسطة <strong>moussachm</strong> — نموذج توضيحي لأغراض العرض</span>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/bot.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

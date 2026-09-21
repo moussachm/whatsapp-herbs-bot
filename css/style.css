@@ -1,0 +1,376 @@
+/* ============================================================
+   style.css — تصميم وكيل خدمة العملاء
+   ألوان مستوحاة من واتساب + هوية الأعشاب الطبيعية
+   ============================================================ */
+
+:root {
+  --wa-green: #128c7e;
+  --wa-green-light: #25d366;
+  --wa-teal-dark: #075e54;
+  --chat-bg: #efe7dd;
+  --bubble-out: #d9fdd3;
+  --bubble-in: #ffffff;
+  --page-bg: #f0f2f5;
+  --surface: #ffffff;
+  --text: #111b21;
+  --text-muted: #667781;
+  --border: #e2e6ea;
+  --shadow-sm: 0 1px 3px rgba(11, 20, 26, .08);
+  --shadow-md: 0 4px 16px rgba(11, 20, 26, .10);
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", "Tahoma", "Noto Naskh Arabic", system-ui, -apple-system, sans-serif;
+  background: var(--page-bg);
+  color: var(--text);
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== الهيدر ===== */
+.page-header {
+  background: linear-gradient(135deg, var(--wa-teal-dark), var(--wa-green));
+  color: #fff;
+  padding: 26px 0;
+  box-shadow: var(--shadow-md);
+}
+
+.page-header .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand { display: flex; align-items: center; gap: 14px; }
+
+.brand-icon {
+  font-size: 34px;
+  width: 58px; height: 58px;
+  display: grid; place-items: center;
+  background: rgba(255,255,255,.15);
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+}
+
+.brand h1 { font-size: 21px; font-weight: 700; letter-spacing: -.2px; }
+.brand-sub { font-size: 13.5px; opacity: .88; }
+
+.badges { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.badge {
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.16);
+  border: 1px solid rgba(255,255,255,.25);
+  white-space: nowrap;
+}
+
+/* ===== التخطيط ===== */
+.layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 22px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  align-items: start;
+}
+
+/* ===== لوحة المحادثة ===== */
+.chat-panel {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 640px;
+}
+
+.chat-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--wa-teal-dark);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.chat-head .avatar {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.2);
+  display: grid; place-items: center;
+  font-size: 20px;
+}
+
+.chat-head-info { display: flex; flex-direction: column; line-height: 1.35; }
+.chat-head-info strong { font-size: 15px; }
+.status { font-size: 12px; opacity: .85; display: flex; align-items: center; gap: 5px; }
+
+.dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--wa-green-light);
+  box-shadow: 0 0 0 0 rgba(37,211,102,.7);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(37,211,102,.6); }
+  70%  { box-shadow: 0 0 0 7px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+.reset-btn {
+  margin-inline-start: auto;
+  background: rgba(255,255,255,.15);
+  border: none;
+  color: #fff;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background .2s, transform .3s;
+}
+.reset-btn:hover { background: rgba(255,255,255,.28); transform: rotate(-90deg); }
+
+/* ===== جسم المحادثة ===== */
+.chat-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 16px;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(200,190,175,.25) 0 1px, transparent 1px) 0 0/22px 22px,
+    var(--chat-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scroll-behavior: smooth;
+}
+
+.msg {
+  max-width: 78%;
+  padding: 9px 13px;
+  border-radius: 12px;
+  font-size: 14.5px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  box-shadow: var(--shadow-sm);
+  animation: pop .25s ease-out;
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: translateY(8px) scale(.97); }
+  to   { opacity: 1; transform: none; }
+}
+
+.msg.bot {
+  align-self: flex-start;
+  background: var(--bubble-in);
+  border-top-right-radius: 3px;
+}
+
+.msg.user {
+  align-self: flex-end;
+  background: var(--bubble-out);
+  border-top-left-radius: 3px;
+}
+
+.msg strong { font-weight: 700; }
+.msg-time {
+  display: block;
+  font-size: 10.5px;
+  color: var(--text-muted);
+  text-align: left;
+  margin-top: 4px;
+  direction: ltr;
+}
+
+/* ===== مؤشر الكتابة ===== */
+.typing {
+  display: flex;
+  gap: 4px;
+  padding: 10px 18px;
+  background: var(--chat-bg);
+  flex-shrink: 0;
+}
+
+.typing span {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  animation: bounce 1.3s infinite;
+}
+.typing span:nth-child(2) { animation-delay: .18s; }
+.typing span:nth-child(3) { animation-delay: .36s; }
+
+@keyframes bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: .45; }
+  30%           { transform: translateY(-6px); opacity: 1; }
+}
+
+/* ===== حقل الإدخال ===== */
+.chat-input {
+  display: flex;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.chat-input input {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 11px 18px;
+  font-size: 14.5px;
+  font-family: inherit;
+  background: #f7f9fa;
+  outline: none;
+  transition: border-color .2s, background .2s;
+}
+.chat-input input:focus {
+  border-color: var(--wa-green);
+  background: #fff;
+}
+
+.chat-input button {
+  width: 46px; height: 46px;
+  border: none;
+  border-radius: 50%;
+  background: var(--wa-green);
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background .2s, transform .15s;
+  transform: scaleX(-1); /* قلب أيقونة الإرسال لتناسب RTL */
+}
+.chat-input button:hover { background: var(--wa-teal-dark); }
+.chat-input button:active { transform: scaleX(-1) scale(.92); }
+
+/* ===== اللوحة الجانبية ===== */
+.side-panel { display: flex; flex-direction: column; gap: 18px; }
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.card h2 {
+  font-size: 15px;
+  margin-bottom: 12px;
+  color: var(--wa-teal-dark);
+  font-weight: 700;
+}
+
+.card-note { background: #f6fbf8; border-color: #cfe9dd; }
+.card-note p { font-size: 13.5px; color: #33544a; }
+.card-note code {
+  background: #e3f2ec;
+  padding: 1px 6px;
+  border-radius: 5px;
+  font-size: 12.5px;
+  direction: ltr;
+  display: inline-block;
+}
+
+/* أزرار الاقتراحات */
+.suggestions { display: flex; flex-direction: column; gap: 8px; }
+
+.suggestions button {
+  text-align: right;
+  border: 1px solid var(--border);
+  background: #fafbfc;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  font-family: inherit;
+  color: var(--text);
+  cursor: pointer;
+  transition: all .18s;
+  direction: rtl;
+}
+
+.suggestions button:hover {
+  background: #e8f5f0;
+  border-color: var(--wa-green);
+  color: var(--wa-teal-dark);
+  transform: translateX(-3px);
+}
+
+/* الخطوات */
+.steps {
+  list-style: none;
+  counter-reset: step;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding-inline-start: 34px;
+  font-size: 13.5px;
+  color: #3c4a52;
+}
+
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  inset-inline-start: 0;
+  top: 1px;
+  width: 23px; height: 23px;
+  border-radius: 50%;
+  background: var(--wa-green);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+/* ===== الفوتر ===== */
+.page-footer {
+  background: #fff;
+  border-top: 1px solid var(--border);
+  padding: 18px 0;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ===== التجاوب ===== */
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; }
+  .chat-panel { height: 560px; }
+  .page-header .container { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .brand h1 { font-size: 18px; }
+  .msg { max-width: 88%; }
+  .chat-panel { height: 70vh; }
+}
