@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#075e54"/>
+      <stop offset="55%" stop-color="#128c7e"/>
+      <stop offset="100%" stop-color="#25d366"/>
+    </linearGradient>
+    <linearGradient id="bubbleOut" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d9fdd3"/>
+      <stop offset="100%" stop-color="#c8f5c0"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#04302b" flood-opacity="0.28"/>
+    </filter>
+    <filter id="tiny" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#04302b" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- خلفية -->
+  <rect width="1200" height="480" rx="0" fill="url(#bg)"/>
+
+  <!-- نقاط زخرفية -->
+  <g fill="#ffffff" opacity="0.07">
+    <circle cx="80" cy="60" r="3"/><circle cx="160" cy="60" r="3"/><circle cx="240" cy="60" r="3"/>
+    <circle cx="80" cy="110" r="3"/><circle cx="160" cy="110" r="3"/><circle cx="240" cy="110" r="3"/>
+    <circle cx="1040" cy="400" r="3"/><circle cx="1100" cy="400" r="3"/><circle cx="1160" cy="400" r="3"/>
+    <circle cx="1040" cy="440" r="3"/><circle cx="1100" cy="440" r="3"/>
+  </g>
+
+  <!-- أوراق زخرفية يسار -->
+  <g opacity="0.16" fill="#ffffff">
+    <path d="M60 400 Q110 320 90 250 Q140 330 120 400 Z"/>
+    <path d="M130 410 Q190 340 175 265 Q215 350 195 410 Z"/>
+  </g>
+
+  <!-- ===== النص ===== -->
+  <g font-family="Segoe UI, Tahoma, Arial, sans-serif" direction="rtl">
+    <text x="660" y="150" font-size="27" fill="#b8f0d4" font-weight="600" text-anchor="end">نموذج تفاعلي · بدون سيرفر</text>
+
+    <text x="660" y="222" font-size="56" fill="#ffffff" font-weight="800" text-anchor="end">وكيل خدمة العملاء</text>
+    <text x="660" y="288" font-size="56" fill="#ffffff" font-weight="800" text-anchor="end">الذكي 🌿</text>
+
+    <text x="660" y="345" font-size="24" fill="#d8f7e7" text-anchor="end">يرد على استفسارات عملاء متجر الأعشاب والتوابل</text>
+    <text x="660" y="382" font-size="24" fill="#d8f7e7" text-anchor="end">تلقائياً — بالعربية، وفي أي وقت</text>
+
+    <!-- شارات -->
+    <g font-size="17" font-weight="600">
+      <rect x="330" y="410" rx="16" width="118" height="34" fill="#ffffff" opacity="0.22"/>
+      <text x="389" y="433" fill="#ffffff" text-anchor="middle">Vanilla JS</text>
+
+      <rect x="460" y="410" rx="16" width="96" height="34" fill="#ffffff" opacity="0.22"/>
+      <text x="508" y="433" fill="#ffffff" text-anchor="middle">0 مكتبات</text>
+
+      <rect x="568" y="410" rx="16" width="92" height="34" fill="#ffffff" opacity="0.22"/>
+      <text x="614" y="433" fill="#ffffff" text-anchor="middle">عربي RTL</text>
+    </g>
+  </g>
+
+  <!-- ===== محاكاة محادثة ===== -->
+  <g filter="url(#soft)">
+    <rect x="60" y="72" width="330" height="360" rx="22" fill="#ffffff"/>
+  </g>
+
+  <!-- هيدر المحادثة -->
+  <path d="M60 94 Q60 72 82 72 L368 72 Q390 72 390 94 L390 138 L60 138 Z" fill="#075e54"/>
+  <circle cx="98" cy="105" r="19" fill="#ffffff" opacity="0.2"/>
+  <text x="98" y="112" font-size="18" text-anchor="middle">🌿</text>
+  <text x="128" y="101" font-size="15" fill="#ffffff" font-weight="700" font-family="Segoe UI, Tahoma, sans-serif">النسمة | خدمة العملاء</text>
+  <circle cx="132" cy="117" r="4" fill="#25d366"/>
+  <text x="144" y="121" font-size="11.5" fill="#a8e6cf" font-family="Segoe UI, Tahoma, sans-serif">متصل الآن</text>
+
+  <!-- فقاعة العميل -->
+  <g filter="url(#tiny)">
+    <rect x="200" y="158" width="172" height="40" rx="12" fill="url(#bubbleOut)"/>
+  </g>
+  <text x="358" y="184" font-size="14.5" fill="#111b21" text-anchor="end" font-family="Segoe UI, Tahoma, sans-serif">أبغى شي يساعد على النوم</text>
+
+  <!-- فقاعة الوكيل -->
+  <g filter="url(#tiny)">
+    <rect x="76" y="212" width="256" height="112" rx="12" fill="#ffffff" stroke="#e5e8eb"/>
+  </g>
+  <text x="312" y="238" font-size="14" fill="#111b21" text-anchor="end" font-weight="700" font-family="Segoe UI, Tahoma, sans-serif">✅ زهرة البابونج</text>
+  <text x="312" y="262" font-size="13" fill="#3c4a52" text-anchor="end" font-family="Segoe UI, Tahoma, sans-serif">السعر: 12 د.ل / علبة 100 غرام</text>
+  <text x="312" y="286" font-size="13" fill="#3c4a52" text-anchor="end" font-family="Segoe UI, Tahoma, sans-serif">يهدّي الأعصاب ويساعد على النوم</text>
+  <text x="312" y="310" font-size="13" fill="#128c7e" text-anchor="end" font-family="Segoe UI, Tahoma, sans-serif">تحب أجهّز لك طلب؟</text>
+
+  <!-- فقاعة العميل 2 -->
+  <g filter="url(#tiny)">
+    <rect x="228" y="340" width="144" height="40" rx="12" fill="url(#bubbleOut)"/>
+  </g>
+  <text x="358" y="366" font-size="14.5" fill="#111b21" text-anchor="end" font-family="Segoe UI, Tahoma, sans-serif">بكم علبتين؟</text>
+
+  <!-- مؤشر الكتابة -->
+  <g filter="url(#tiny)">
+    <rect x="76" y="394" width="72" height="30" rx="12" fill="#ffffff" stroke="#e5e8eb"/>
+  </g>
+  <circle cx="98" cy="409" r="3.5" fill="#667781" opacity="0.55"/>
+  <circle cx="112" cy="409" r="3.5" fill="#667781" opacity="0.75"/>
+  <circle cx="126" cy="409" r="3.5" fill="#667781" opacity="0.95"/>
+</svg>
