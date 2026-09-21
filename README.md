@@ -1,8 +1,14 @@
 # 🤖 وكيل خدمة العملاء الذكي — للأعشاب والتوابل
 
+[![Live Demo](https://img.shields.io/badge/🌿_جرّبه_مباشرة-Live_Demo-25d366?style=for-the-badge)](https://moussachm.github.io/whatsapp-herbs-bot/)
+[![No Dependencies](https://img.shields.io/badge/dependencies-0-blue?style=for-the-badge)](.)
+[![Vanilla JS](https://img.shields.io/badge/JavaScript-Vanilla-f7df1e?style=for-the-badge&logo=javascript&logoColor=black)](.)
+
 نموذج تفاعلي (Live Demo) لوكيل ذكاء اصطناعي يرد على استفسارات عملاء متجر أعشاب وتوابل **تلقائياً**، بدون أي تدخل بشري.
 
-> **🔗 العرض المباشر:** `https://moussachm.github.io/whatsapp-herbs-bot/`
+### 🔗 [**جرّبه مباشرة من هنا**](https://moussachm.github.io/whatsapp-herbs-bot/) ← افتح الرابط وابدأ المحادثة
+
+**بدون سيرفر · بدون API · بدون مفاتيح · بدون أي مكتبة خارجية**
 
 ---
 
